@@ -2,10 +2,19 @@
   "name": "ai-router-sdk",
   "version": "0.0.1",
   "description": "Official Python SDK for airouter.io - Automatically route requests to the best Large Language Model (LLM).",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
+    "build": "tsc",
+    "ci": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matthias Lau <matthias@airouter.io>, Kai Wendlandt <kai@airouter.io>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
 }
