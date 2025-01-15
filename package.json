@@ -10,12 +10,14 @@
   "scripts": {
     "build": "tsc",
     "format": "prettier --write .",
-    "ci": "npm run build",
+    "check-exports": "attw --pack .",
+    "ci": "npm run build && npm run format && npm run check-exports",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matthias Lau <matthias@airouter.io>, Kai Wendlandt <kai@airouter.io>",
   "license": "ISC",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.3",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3"
   },
