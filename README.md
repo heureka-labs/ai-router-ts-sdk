@@ -28,10 +28,10 @@ npm run test
 
 CI is automatically running `npm run ci` which builds, formats and checks build.
 
-
 ## Try package locally
 
 Run the following command in a different local ts/js project to try the package locally:
+
 ```sh
 npm link
 ```
