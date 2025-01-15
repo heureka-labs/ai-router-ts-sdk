@@ -38,8 +38,7 @@ npm link
 
 ## Publish
 
-Documentation can be found here: https://docs.npmjs.com/cli/v9/commands/npm-publish Probably also needs npm account and token to publish it. Did not try this, yet.
-
+Run the following command and follow the instructions on screen:
 ```sh
 npm publish
 ```
