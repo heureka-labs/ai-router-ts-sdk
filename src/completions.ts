@@ -12,27 +12,29 @@ import { AiRouterModel } from "./types/model"
 import { AiRouterWeighting } from "./types/weighting"
 import { Stream } from "openai/streaming"
 
-// type AiRouterCompletionCreate = {
-//   model: AiRouterModel | "auto"
-//   models: AiRouterModel[]
-//   weighting: AiRouterWeighting
-// } & ChatCompletionCreateParams
+type AiRouterCompletionCreate = {
+  model: AiRouterModel | "auto"
+  models: AiRouterModel[]
+  weighting: AiRouterWeighting
+} & ChatCompletionCreateParams
 
 export class AiRouterCompletions extends Completions {
   create(
-    body: ChatCompletionCreateParamsNonStreaming,
+    body: AiRouterCompletionCreate & ChatCompletionCreateParamsNonStreaming,
     options?: RequestOptions,
   ): APIPromise<ChatCompletion>
   create(
-    body: ChatCompletionCreateParamsStreaming,
+    body: AiRouterCompletionCreate & ChatCompletionCreateParamsStreaming,
     options?: RequestOptions,
   ): APIPromise<Stream<ChatCompletionChunk>>
   create(
-    body: ChatCompletionCreateParamsBase,
+    body: AiRouterCompletionCreate & ChatCompletionCreateParamsBase,
     options?: RequestOptions,
   ): APIPromise<Stream<ChatCompletionChunk> | ChatCompletion>
-  public create(body: ChatCompletionCreateParams, options?: RequestOptions) {
-    // const { model, models, weighting, ...originalBody } = body
+  public create(
+    body: AiRouterCompletionCreate & ChatCompletionCreateParams,
+    options?: RequestOptions,
+  ) {
     return super.create(body, options)
   }
 }
