@@ -1,5 +1,5 @@
 {
-  "name": "ai-router-sdk",
+  "name": "airouter-sdk",
   "version": "0.0.1",
   "description": "Official Typescript SDK for airouter.io - Automatically route requests to the best Large Language Model (LLM).",
   "main": "dist/index.js",
