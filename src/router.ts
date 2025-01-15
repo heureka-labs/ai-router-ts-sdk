@@ -1,3 +1,3 @@
 export const router = () => {
-  return true;
-};
+  return true
+}

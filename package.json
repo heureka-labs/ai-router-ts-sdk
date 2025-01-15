@@ -9,12 +9,17 @@
   ],
   "scripts": {
     "build": "tsc",
+    "format": "prettier --write .",
     "ci": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matthias Lau <matthias@airouter.io>, Kai Wendlandt <kai@airouter.io>",
   "license": "ISC",
   "devDependencies": {
+    "prettier": "^3.4.2",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "openai": "^4.78.1"
   }
 }
