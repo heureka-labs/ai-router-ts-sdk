@@ -39,6 +39,7 @@ npm link
 ## Publish
 
 Run the following command and follow the instructions on screen:
+
 ```sh
 npm publish
 ```
