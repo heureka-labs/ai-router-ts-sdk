@@ -15,7 +15,7 @@ test("AiRouter", async () => {
 
   const result2 = await client.getBestModel({
     embedding: [0.1, 0.2, 0.3],
-    embeddingModel: "text-embedding-3-small",
+    embeddingType: "text-embedding-3-small",
   })
   console.log({ result2 })
 })
