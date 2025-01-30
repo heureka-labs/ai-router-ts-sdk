@@ -7,7 +7,7 @@ const AI_ROUTER_BASE_URL = "https://api.airouter.io"
 
 type Message = { role: string; content: string }
 
-export type GetBestModelParams =
+export type GetBestModelParams = (
   | {
       messages: Message[]
       fullPrivacy?: boolean
@@ -20,6 +20,9 @@ export type GetBestModelParams =
       embedding: number[]
       embeddingType: AiRouterEmbeddingType
     }
+) & {
+  [key: string]: any // Allow additional parameters
+}
 
 export class AiRouter {
   private apiKey: string
@@ -41,8 +44,6 @@ export class AiRouter {
       baseUrl ??
       process.env[AI_ROUTER_BASE_URL_ENV_VAR_NAME] ??
       AI_ROUTER_BASE_URL
-
-    console.log("AI Router initialized with base URL:", this.baseUrl)
   }
 
   public async getBestModel({
@@ -50,6 +51,7 @@ export class AiRouter {
     fullPrivacy = false,
     embedding,
     embeddingType,
+    ...additionalParams
   }: GetBestModelParams): Promise<AiRouterModel> {
     // explicitly set full privacy if an embedding is provided
     if (embedding) {
@@ -63,26 +65,33 @@ export class AiRouter {
           `Automatically generating embeddings for the full privacy mode is not supported yet. Please provide an embedding.`,
         )
       }
-      return await this.getBestModelByEmbedding(embedding, embeddingType)
+      return await this.getBestModelByEmbedding(
+        embedding,
+        embeddingType,
+        additionalParams,
+      )
     }
 
     // in model selection mode, send messages to the airouter to receive the best model
-    return await this.getBestModelByMessages(messages)
+    return await this.getBestModelByMessages(messages, additionalParams)
   }
 
   private async getBestModelByMessages(
     messages: Message[],
+    additionalParams: Record<string, any> = {},
   ): Promise<AiRouterModel> {
-    return await this.executeRequest({ messages })
+    return await this.executeRequest({ messages, ...additionalParams })
   }
 
   private async getBestModelByEmbedding(
     embedding: number[],
     embeddingType: AiRouterEmbeddingType,
+    additionalParams: Record<string, any> = {},
   ): Promise<AiRouterModel> {
     return await this.executeRequest({
       embedding,
       embeddingType,
+      ...additionalParams,
     })
   }
 
@@ -90,10 +99,12 @@ export class AiRouter {
     messages,
     embedding,
     embeddingType,
+    fullPrivacy,
+    ...additionalParams
   }: GetBestModelParams): Promise<AiRouterModel> {
     const body = messages
-      ? { messages }
-      : { embedding, embedding_type: embeddingType }
+      ? { messages, ...additionalParams }
+      : { embedding, embedding_type: embeddingType, ...additionalParams }
     const response = await fetch(`${this.baseUrl}/v1/chat/completions`, {
       method: "POST",
       headers: {
