@@ -17,7 +17,7 @@
 
 </h4>
 
-[![npm version](https://badge.fury.io/js/airouter-sdk.svg)](https://www.npmjs.com/package/airouter-sdk)
+[![npm version](https://badge.fury.io/js/@airouter.io%2Fairouter-sdk.svg)](https://www.npmjs.com/package/airouter-sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
@@ -29,7 +29,7 @@
 Install the package using npm:
 
 ```sh
-npm install airouter-sdk
+npm install @airouter.io/airouter-sdk
 ```
 
 # Usage
@@ -37,7 +37,7 @@ npm install airouter-sdk
 Initialize the AiRouter class with your API key:
 
 ```ts
-import { AiRouter } from "airouter-sdk"
+import { AiRouter } from "@airouter.io/airouter-sdk"
 
 const airouter = new AiRouter(
     '<YOUR-API-KEY>',
