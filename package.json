@@ -1,5 +1,5 @@
 {
-  "name": "airouter-sdk",
+  "name": "@airouter.io/airouter-sdk",
   "version": "0.1.2",
   "description": "Official Typescript SDK for airouter.io - Automatically route requests to the best Large Language Model (LLM).",
   "main": "dist/index.js",
