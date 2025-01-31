@@ -48,4 +48,11 @@ export class AiRouterModel {
   getModel(): ModelName {
     return this.model
   }
+
+  equals(other: AiRouterModel | ModelName): boolean {
+    if (other instanceof AiRouterModel) {
+      return this.model === other.model
+    }
+    return this.model === other
+  }
 }
