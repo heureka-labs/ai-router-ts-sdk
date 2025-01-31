@@ -52,54 +52,5 @@ const bestModelFullPrivacy = await airouter.getBestModel({
 })
 ```
 
-# Development Setup
-
-## Build
-
-```sh
-npm run build
-```
-
-## Verify exports after building
-
-```sh
-npm run check-exports
-```
-
-## Run formatting
-
-```sh
-npm run format
-```
-
-## Run tests (once they exist)
-
-```sh
-npm run test
-```
-
-## CI
-
-CI is automatically running `npm run ci` which builds, formats and checks build.
-
-## Try package locally
-
-Run the following command in this repo:
-
-```sh
-npm link
-```
-
-Run the following command in a different local ts/js project to try out the package locally:
-
-```sh
-npm link airouter-sdk
-```
-
-## Publish
-
-Run the following command and follow the instructions on screen:
-
-```sh
-npm publish
-```
+# License
+This project is licensed under the MIT License - see the LICENSE file for details.
