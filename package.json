@@ -1,6 +1,6 @@
 {
   "name": "airouter-sdk",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Official Typescript SDK for airouter.io - Automatically route requests to the best Large Language Model (LLM).",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
     "test:watch": "jest --watch"
   },
   "author": "Matthias Lau <matthias@airouter.io>, Kai Wendlandt <kai@airouter.io>",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.3",
     "@types/jest": "^29.5.14",
