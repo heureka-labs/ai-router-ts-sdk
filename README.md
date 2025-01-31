@@ -17,7 +17,7 @@
 
 </h4>
 
-[![npm version](https://badge.fury.io/js/@airouter.io%2Fairouter-sdk.svg)](https://www.npmjs.com/package/airouter-sdk)
+[![npm version](https://badge.fury.io/js/@airouter.io%2Fairouter-sdk.svg)](https://www.npmjs.com/package/@airouter.io/airouter-sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
