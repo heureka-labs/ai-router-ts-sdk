@@ -1,5 +1,7 @@
 export enum ModelName {
   O3_MINI = "o3-mini",
+  GPT_5_2 = "gpt-5.2",
+  GPT_5_1 = "gpt-5.1",
   GPT_5 = "gpt-5",
   GPT_5_MINI = "gpt-5-mini",
   GPT_5_NANO = "gpt-5-nano",
